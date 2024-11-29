@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CHED Graduates Pie Charts</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <h1>CHED Graduates Data Visualization (2021-2022)</h1>
+
+    <h2>Total Graduates Per Program Level</h2>
+    <canvas id="totalGraduatesChart" width="400" height="400"></canvas>
+
+    <h2>Pre-Baccalaureate Graduates by Sex</h2>
+    <canvas id="preBaccalaureateChart" width="400" height="400"></canvas>
+
+    <h2>Baccalaureate Graduates by Sex</h2>
+    <canvas id="baccalaureateChart" width="400" height="400"></canvas>
+
+    <h2>Post-Baccalaureate Graduates by Sex</h2>
+    <canvas id="postBaccalaureateChart" width="400" height="400"></canvas>
+
+    <h2>Master's Graduates by Sex</h2>
+    <canvas id="mastersChart" width="400" height="400"></canvas>
+
+    <h2>Doctoral Graduates by Sex</h2>
+    <canvas id="doctoralChart" width="400" height="400"></canvas>
+
+    
+      <script>
+    
+    const data = {
+        total: [17390, 602271, 2683, 38889, 5065],
+        preBaccalaureate: [9351, 8039],
+        baccalaureate: [362974, 239297],
+        postBaccalaureate: [1690, 993],
+        masters: [26505, 12384],
+        doctoral: [3084, 1981]
+    };
+
+    const labels = {
+        programs: ['Pre-Baccalaureate', 'Baccalaureate', 'Post-Baccalaureate', "Master's", 'Doctoral'],
+        sexes: ['Female', 'Male']
+    };
+
+   
+    new Chart(document.getElementById('totalGraduatesChart'), {
+        type: 'pie',
+        data: {
+            labels: labels.programs,
+            datasets: [{
+                label: 'Total Graduates',
+                data: data.total,
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+            }]
+        }
+    });
+
+    
+    new Chart(document.getElementById('preBaccalaureateChart'), {
+        type: 'pie',
+        data: {
+            labels: labels.sexes,
+            datasets: [{
+                label: 'Pre-Baccalaureate Graduates',
+                data: data.preBaccalaureate,
+                backgroundColor: ['#FF6384', '#36A2EB']
+            }]
+        }
+    });
+
+   
+    new Chart(document.getElementById('baccalaureateChart'), {
+        type: 'pie',
+        data: {
+            labels: labels.sexes,
+            datasets: [{
+                label: 'Baccalaureate Graduates',
+                data: data.baccalaureate,
+                backgroundColor: ['#FF6384', '#36A2EB']
+            }]
+        }
+    });
+
+   
+    new Chart(document.getElementById('postBaccalaureateChart'), {
+        type: 'pie',
+        data: {
+            labels: labels.sexes,
+            datasets: [{
+                label: 'Post-Baccalaureate Graduates',
+                data: data.postBaccalaureate,
+                backgroundColor: ['#FF6384', '#36A2EB']
+            }]
+        }
+    });
+
+    
+    new Chart(document.getElementById('mastersChart'), {
+        type: 'pie',
+        data: {
+            labels: labels.sexes,
+            datasets: [{
+                label: "Master's Graduates",
+                data: data.masters,
+                backgroundColor: ['#FF6384', '#36A2EB']
+            }]
+        }
+    });
+
+    
+    new Chart(document.getElementById('doctoralChart'), {
+        type: 'pie',
+        data: {
+            labels: labels.sexes,
+            datasets: [{
+                label: 'Doctoral Graduates',
+                data: data.doctoral,
+                backgroundColor: ['#FF6384', '#36A2EB']
+            }]
+        }
+    });
+</script>
+
+    </script>
+  </body>
+</html>
